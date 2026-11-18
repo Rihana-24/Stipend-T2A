@@ -1,0 +1,25 @@
+{
+  "name": "stipends-t2a",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Suivi de la réception des stipends — Talent2Africa x Mastercard Foundation",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "db:init": "wrangler d1 execute stipends-t2a --remote --file=schema.sql",
+    "db:seed": "wrangler d1 execute stipends-t2a --remote --file=seed/associates.sql",
+    "db:init:local": "wrangler d1 execute stipends-t2a --local --file=schema.sql",
+    "db:seed:local": "wrangler d1 execute stipends-t2a --local --file=seed/associates.sql",
+    "db:setup": "npm run db:init && npm run db:seed && npm run db:placements && npm run db:cfa",
+    "db:migrate3": "wrangler d1 execute stipends-t2a --remote --file=migrations/003_cfa.sql",
+    "db:cfa": "wrangler d1 execute stipends-t2a --remote --file=seed/cfa.sql",
+    "db:migrate": "wrangler d1 execute stipends-t2a --remote --file=migrations/002_placements.sql",
+    "db:placements": "wrangler d1 execute stipends-t2a --remote --file=seed/placements.sql",
+    "seed:build": "python3 scripts/build_seed.py"
+  },
+  "devDependencies": {
+    "pdf-lib": "^1.17.1",
+    "wrangler": "^4.0.0"
+  }
+}
