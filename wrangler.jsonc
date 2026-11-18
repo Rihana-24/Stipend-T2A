@@ -13,7 +13,7 @@
   },
 
   "vars": {
-    "APP_URL": "https://stipends-t2a.VOTRE-SOUS-DOMAINE.workers.dev",
+    "APP_URL": "https://stipends-t2a.n-espace-pour-toi.workers.dev",
     "MAIL_FROM": "Talent2Africa <stipends@votre-domaine.org>",
     "ADMIN_EMAILS": "rihanatoubankole1703@gmail.com,rihanatou.bankole@mfap.talent2africa.com,ahonakpon.gbaguidi@mfap.talent2africa.com"
   },
